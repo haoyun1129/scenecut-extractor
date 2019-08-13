@@ -41,10 +41,7 @@ def get_scenecuts(in_f, threshold=0.3):
         raise RuntimeError("Threshold must be between 0 and 1")
 
     try:
-        temp_dir = tempfile.gettempdir()
-        temp_file_name = os.path.join(
-            temp_dir, next(tempfile._get_candidate_names()) + ".txt"
-        )
+        temp_file_name = next(tempfile._get_candidate_names()) + ".txt"
 
         cmd = [
             "ffmpeg",

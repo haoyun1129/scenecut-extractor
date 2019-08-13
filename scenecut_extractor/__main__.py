@@ -138,7 +138,7 @@ def main():
     scenecuts = get_scenecuts(cli_args.input, cli_args.threshold)
 
     if cli_args.output == "all":
-        if cli_args.output_format == "csv":
+        if cli_args.output_format == "csv" and len(scenecuts) > 0:
             print(",".join(scenecuts[0].keys()))
             print(
                 "\n".join(
